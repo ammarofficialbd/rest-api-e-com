@@ -1,3 +1,5 @@
+// schema.prisma
+
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
@@ -7,14 +9,17 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model Products {
+model Product {
   id          Int      @id @default(autoincrement())
   name        String
-  description String
+  description String?
   price       Float
   brand       String
   color       String
+  category    String
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+
+  @@map("Products")
 }
 
