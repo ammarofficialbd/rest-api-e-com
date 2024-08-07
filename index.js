@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { query } from 'express';
 import dotenv from 'dotenv';
 import productRouter from './src/routes/productRoutes.js'; // Adjust the path as necessary
 import main from './src/db/db.config.js';
